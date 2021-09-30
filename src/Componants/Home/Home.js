@@ -23,6 +23,7 @@ const Home = () => {
 
         setSearchText(searchValue);
     }
+
     let [loading, setLoading] = useState(true);
     let [color, setColor] = useState("#8e44ad");
     const override = css`
@@ -40,11 +41,13 @@ const Home = () => {
                 ></Header>
             </div>
             {
-                meals.length === 0 ?
-                    <div className="sweet-loading">
 
-                        <HashLoader color={color} loading={loading} css={override} size={150} />
-                    </div>
+                !meals ? alert('Enter Valid Name or back')
+
+                    // <div className="sweet-loading">
+
+                    //     <HashLoader color={color} loading={loading} css={override} size={150} />
+                    // </div>
 
                     : <div className="lg:grid grid-cols-4 gap-5 p-11">
                         {
